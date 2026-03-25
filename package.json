@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "cf:dev": "wrangler dev cf-worker/index.ts",
+    "cf:deploy": "wrangler deploy cf-worker/index.ts",
+    "cf:secret": "wrangler secret put TOKEN"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
@@ -55,7 +58,8 @@
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
     "typescript": "^5",
-    "vercel": "^46.0.1"
+    "vercel": "^46.0.1",
+    "wrangler": "^3.114.0"
   },
   "optionalDependencies": {
     "bufferutil": "^4.0.9"

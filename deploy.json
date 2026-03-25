@@ -1,0 +1,16 @@
+{
+  "button_url": "https://deploy.workers.cloudflare.com/?url=https://github.com/yhfdyip/ms-ra-forwarder",
+  "repository": {
+    "url": "https://github.com/yhfdyip/ms-ra-forwarder"
+  },
+  "build": {
+    "command": "npm install"
+  },
+  "env_vars": [
+    {
+      "name": "TOKEN",
+      "description": "访问令牌（可选）。设置后，请求需在 Header 中携带 Authorization: Bearer <TOKEN>",
+      "default": ""
+    }
+  ]
+}

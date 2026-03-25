@@ -1,0 +1,21 @@
+# Cloudflare Workers 配置文件
+# 文档：https://developers.cloudflare.com/workers/wrangler/configuration/
+
+name = "ms-ra-forwarder"
+main = "cf-worker/index.ts"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+# Workers 免费计划已足够使用，如需更高限额可升级 Paid 计划
+# account_id = "your_account_id"   # 可选，不填时 wrangler 会自动检测
+
+[vars]
+# 在此处设置默认环境变量（明文，非敏感信息）
+# TOKEN = ""   # 访问令牌，留空表示不限制访问
+
+# 生产环境敏感变量请通过以下方式设置（不要写在此文件中）：
+#   wrangler secret put TOKEN
+# 或在 Cloudflare Dashboard → Workers → Settings → Variables 中配置
+
+[observability]
+enabled = true

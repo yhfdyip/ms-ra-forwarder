@@ -15,6 +15,40 @@ Railway 增加了每个月500小时的限制，而且不会自动停机，所以
 
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/p8RU3T?referralCode=-hqLZp)
 
+### 部署到 Cloudflare Workers（推荐·免费·全球加速）
+
+Cloudflare Workers 全球分布式部署，免费计划每天 10 万次请求，无需服务器，延迟低。
+
+#### 方式一：一键部署（推荐）
+
+[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/yhfdyip/ms-ra-forwarder)
+
+点击按钮后：
+1. 登录或注册 Cloudflare 账号
+2. 授权 Cloudflare 访问你的 GitHub
+3. 点击 **Deploy** 完成部署
+4. （可选）在 Workers → Settings → Variables 中添加 `TOKEN` 环境变量以限制访问
+
+#### 方式二：手动命令行部署
+
+```bash
+# 1. 安装依赖
+npm install
+
+# 2. 登录 Cloudflare
+npx wrangler login
+
+# 3. 部署到 Cloudflare Workers
+npm run cf:deploy
+
+# 4. （可选）设置访问令牌
+npm run cf:secret
+```
+
+部署成功后会输出类似 `https://ms-ra-forwarder.<your-subdomain>.workers.dev` 的访问地址。
+
+> **注意：** Cloudflare Workers 免费计划每天限制 10 万次请求，对个人使用完全够用。如需更高限额，可升级到 Paid 计划（$5/月，每月 1000 万次请求）。
+
 ### 部署到 Heroku
 
 
